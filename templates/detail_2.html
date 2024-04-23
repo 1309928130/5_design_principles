@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Design Principle Detail</title>
+    <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 20px;
+            color: black;
+        }
+
+        body::first-letter {
+            /* Capitalize the first letter */
+            text-transform: uppercase;
+        }
+
+    </style>
+
+</head>
+<body>
+    <h1>{{ principle['design_principle_name'] }}</h1>
+    <p>Research methodology: <strong>{{ principle['research_methodology'] }}</strong></p>
+    <!-- Add more details here -->
+<!--    <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture">-->
+    <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture" style="width: 1200px; height: auto;">
+
+    <!-- Display the full-size image of the design principle -->
+</body>
+</html>

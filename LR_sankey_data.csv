@@ -1,0 +1,30 @@
+index;label;color;pad;thickness;line_color;line_width
+0;1.(Van Acker & Triggianese, 2021);rgba(0,0,0,0.2);15;15;black;2
+1;2.(Guangping & guanyu, 2019);rgba(0,0,0,0.2.2);15;15;black;2
+2;3.(Ardeshiri et al., 2016);rgba(0,0,0,0.2);15;15;black;2
+3;4.(Geraedts, 2008);rgba(0,0,0,0.2);15;15;black;2
+4;5.(Hoppenbrouwer & Louw, 2005);rgba(0,0,0,0.2);15;15;black;2
+5;6.(Rabianski & Clements, 2007);rgba(0,0,0,0.2);15;15;black;2
+6;7.(Kelpe, 2007);rgba(0,0,0,0.2);15;15;black;2
+7;8.(Lara-Hernandez et al., n.d.);rgba(0,0,0,0.2);15;15;black;2
+8;9.(Smith, 2023);rgba(0,0,0,0.2);15;15;black;2
+9;10.(Wu et al., 2021);rgba(0,0,0,0.2);15;15;black;2
+10;11.(Hoogendoorn & Daamen);rgba(0,0,0,0.2);15;15;black;2
+11;12.(Jin et al., 2020);rgba(0,0,0,0.2);15;15;black;2
+12;13.(Arne, 2022);rgba(0,0,0,0.2);15;15;black;2
+13;14.(Smith et al., 2021);rgba(0,0,0,0.2);15;15;black;2
+14;15.(Ivers, 2018);rgba(0,0,0,0.2);15;15;black;2
+15;16.(Wang, 2019);rgba(0,0,0,0.2);15;15;black;2
+16;17.(Zhao & Siu, 2014);rgba(0,0,0,0.2);15;15;black;2
+17;18.(Bertolini, 2020);rgba(0,0,0,0.2);15;15;black;2
+18;A. Paradigm of practice;rgba(158,158,158,0.6);15;15;black;2
+19;B. Design Vocabulary;rgba(225,152,50,0.5);15;15;black;2
+20;C1. Programming;rgba(96,125,139,0.4);15;15;black;2
+21;C2. Layout;rgba(158,158,158,0.4);15;15;black;2
+22;C3. Element;rgba(121,85,72,0.4);15;15;black;2
+23;C. Design principles;rgba(121,85,72,0.5);15;15;black;2
+24;T1. Station-city integration;rgba(0,150,136,0.4);55;15;black;2
+25;T2. Related concepts;rgba(86,135,159,0.5);15;35;black;2
+26;T3 Activity in public space 3;rgba(156,39,176,0.4);15;15;black;2
+27;T4 Pedestrian simulation 4;rgba(63,81,181,0.4);15;15;black;2
+28;Others;rgba(3,169,244,0.4);15;15;black;2

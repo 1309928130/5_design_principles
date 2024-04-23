@@ -1,0 +1,24 @@
+index,design_principle_name,research_methodology,paradigm,district_building,outdoor_indoor,congestion_emptiness,trade-off,limitations,fixed_flexible,element_layout,spatial_managerial,picture_location
+1,align open spaces with main paths,research by design,human-centered,district,outdoor,reduce emptiness,-,-,fixed,layout,spatial,image/2024Meeting.001.jpeg
+2,space for humans + scattered mobility sites,case study,human-centered,district,outdoor,reduce emptiness,-,-,fixed,layout,spatial,image/2024Meeting.002.jpeg
+3,add installations,literature review,human-centered,district&building,outdoor&indoor,reduce emptiness,-,-,flexible,element,managerial,image/2024Meeting.003.jpeg
+4,reconfigurable landscapes,literature review,human-centered,district,outdoor,reduce emptiness,-,-,flexible,element,managerial,image/2024Meeting.004.jpeg
+5,stairs as stages or seats,case study,human-centered,district&building,outdoor&indoor,reduce emptiness,-,-,fixed,element,spatial,image/2024Meeting.005.jpeg
+6,shortcuts or optimizing paths,case study,human-centered,building,indoor,reduce congestion&emptiness,-,regulations of security check,fixed,layout,spatial,image/2024Meeting.006.jpeg
+7,reduce level changes by landscape design,research by design,human-centered,district&building,outdoor&indoor,reduce congestion&emptiness,-,-,fixed,element,spatial,image/2024Meeting.007.jpeg
+8,changeable or moveable building,case study,human-centered,building,indoor,reduce emptiness,-,high cost,flexible,element,spatial,image/2024Meeting.008.jpeg
+9,reduce bottlenecks to ease flow,case study,human-centered,district&building,outdoor&indoor,reduce congestion&emptiness,-,-,fixed,element,spatial,image/2024Meeting.009.jpeg
+10,connect and share with neighborhoods,case study,human-centered,district,outdoor,reduce congestion&emptiness,-,-,fixed,element,spatial,image/2024Meeting.010.jpeg
+11,redundant spaces,case study,human-centered,district&building,outdoor&indoor,reduce congestion,increase emptiness,-,fixed,layout,spatial,image/2024Meeting.011.jpeg
+12,redundant spaces + compact network + regulate path,research by design,human-centered,district,outdoor,reduce congestion&emptiness,-,-,flexible,layout,managerial,image/2024Meeting.012.jpeg
+13,city passage,case study,human-centered,district,outdoor,reduce congestion&emptiness,-,-,fixed,layout,spatial,image/2024Meeting.013.jpeg
+14,scattered mobility nodes,case study,human-centered,district&building,outdoor&indoor,reduce congestion,complicate wayfinding,-,fixed,layout,spatial,image/2024Meeting.014.jpeg
+15,set apart bottlenecks,literature review,human-centered,building,indoor,reduce congestion,increase emptiness,-,fixed,layout,spatial,image/2024Meeting.015.jpeg
+16,set apart non-transport function,case study,human-centered,district&building,outdoor&indoor,reduce congestion,mono-use,-,fixed,layout,spatial,image/2024Meeting.016.jpeg
+17,scattered network,case study,human-centered,district&building,outdoor&indoor,reduce emptiness,complicate wayfinding,-,fixed,layout,spatial,image/2024Meeting.017.jpeg
+18,(test),case study,vehicle-centered,building,indoor,reduce emptiness,complicate wayfinding,-,fixed,layout,spatial,image/2024Meeting.018.jpeg
+
+
+
+
+

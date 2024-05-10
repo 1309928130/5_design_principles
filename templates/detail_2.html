@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Design Principle Detail</title>
+    <title style="">Design Principle Detail</title>
     <style>
         body {
             font-family: "Roboto", sans-serif;
@@ -9,6 +9,8 @@
             font-style: normal;
             font-size: 20px;
             color: black;
+            margin-bottom: 0; /* Remove bottom margin */
+            margin-top: 0;
         }
 
         body::first-letter {
@@ -16,16 +18,74 @@
             text-transform: uppercase;
         }
 
+        .image-container {
+            position: relative;
+            display: inline-block; /* Ensure containers wrap properly */
+            flex-wrap: wrap; /* Allow wrapping of items */
+            margin-top: 20px;
+
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Make the description span the full width of the container */
+            text-align: center;
+    padding: 10px; /* Add padding for better readability */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add background color */
+    box-sizing: border-box; /* Include padding in width calculation */
+
+            margin-bottom: 0; /* Remove bottom margin */
+            font-style: normal; /* Style the description text */
+
+            color: black; /* Set color for the description text */
+        }
+
+.main-image {
+    width: auto;
+    height: 70vh;
+    margin: 1px;
+
+}
+
+.detail-image {
+    width: auto;
+    max-height: 50vh;
+    margin: 1px;
+}
+
     </style>
 
 </head>
 <body>
     <h1>{{ principle['design_principle_name'] }}</h1>
-    <p>Research methodology: <strong>{{ principle['research_methodology'] }}</strong></p>
     <!-- Add more details here -->
-<!--    <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture">-->
-    <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture" style="width: 1200px; height: auto;">
+    <!-- <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture"> -->
+    <img src="{{ url_for('static', filename=principle['picture_location']) }}" alt="Picture" class="main-image">
 
     <!-- Display the full-size image of the design principle -->
+    <p>Source of heuristics: <strong>{{ principle['Source of heuristics'] }}</strong></p>
+
+    <!-- Loop through the list of image filenames and generate <img> tags for each -->
+    {% if image_descriptions %}
+        {% for image, description in image_descriptions.items() %}
+            {% if not image.startswith('.DS_Store') %}
+                <!-- Image container with description -->
+                <div class="image-container">
+                    <!-- Display the image -->
+                    <img src="/static/image/{{ principle['detail_pictures_folder'] }}/{{ image }}" alt="Detail Picture" class="detail-image">
+                    <!-- Display the description -->
+                    <p class="description">{{ description }}</p>
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
 </body>
 </html>

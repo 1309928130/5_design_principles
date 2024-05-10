@@ -3,212 +3,228 @@
 <head>
     <title>Design Principles</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-@font-face {
-    font-family: 'helvetica';
-    src: url('helvetica-255/Helvetica.ttf') format('truetype');
-    /* Add other properties such as font-weight and font-style if needed */
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
-@font-face {
-    font-family: 'helvetica-light';
-    src: url('static/helvetica-255/helvetica-light-587ebe5a59211.ttf') format('truetype');
+.main-heading {
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    font-size: 50px;
+    color: black;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-@font-face {
-    font-family: 'helvetica-rounded-bold';
-    src: url('/Users/enshanchen/Desktop/Thesis_folder/5_design_principles/helvetica-255/helvetica-rounded-bold-5871d05ead8de.otf') format('opentype');
+.dropdown-container {
+    display: flex; /* Use flexbox to align items */
+    align-items: center; /* Center items vertically */
+    justify-content: center;
+    margin-bottom: 10px; /* Add margin below the container */
+}
+
+.dropdown-label {
+    margin-right: 5px; /* Add space between label and dropdown */
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    color: black;
+}
+
+.dropdown-menu {
+    border: 1px solid #000; /* Add a border */
+    border-radius: 25px; /* Add rounded corners */
+    width: auto; /* Set the width of the dropdown box */
+    margin-right: 2px;
+
+    font-family: "Roboto", sans-serif;
+    font-weight: 1000;
+    font-style: normal;
+    font-size: 25px;
+    color: black;
+    text-align: center;
+}
+
+.principles-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow pictures to wrap to the next line */
+    justify-content: flex-start;
+    margin-left: 30px;
+}
+
+.principles-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    align-items: flex-start;
+}
+
+.principle {
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    margin: 5px;
+
+}
+
+.principle img {
+    width: 210px ; /* Adjust the width of the images */
+    height: 140px; /* Automatically adjust height while maintaining aspect ratio */
+    transition: transform 0.3s ease-in-out;
+<!--    border: 1px solid rgba(0,0,0,0.1);-->
+}
+
+.principle:hover {
+    z-index: 2; /* Increase z-index on hover to bring the hovered principle to the top */
+}
+.principle:hover img {
+    transform: scale(1.5); /* Scale up the image on hover */
+    z-index: 3;
+}
+
+.tooltip {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: none;
+    border-radius: 0px;
+    visibility: hidden;
+
+    transition: opacity 0.3s ease-in-out;
+    width: 500px; /* Adjust the width */
+
+    color: black; /* Adjust the color */
+    font-family: "Roboto",  sans-serif; /* Change the font type */
+    font-size: 20px; /* Adjust the font size */
+    font-weight: 1000;
+    text-align: center;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+
+    z-index: 3; /* Ensure tooltip appears above other images */
+}
+
+.principle:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    z-index: 3;
+}
+
+.row-container {
+    display: block;
+    flex-direction: column; /* Adjust flex-direction to stack elements vertically */
+    flex-basis: 100%;
+}
+
+.row-title {
+    display: block;
+
+    flex-basis: 100%; /* Force each title to take up the full width */
+<!--    margin-bottom: 5px; /* Adjust the space between rows */-->
+    margin-top: 20px;
+
+    color: rgb(0, 0, 0); /* Adjust the color */
+    font-family: "Roboto",  sans-serif; /* Change the font type */
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 25px; /* Adjust the font size */
+
+}
+.row-title::first-letter {
+    /* Capitalize the first letter */
+    text-transform: uppercase;
 }
 
 
-@font-face {
-    font-family: 'helvetica-boldOblique';
-    src: url('Helvetica-BoldOblique.ttf') format('truetype');
+.index-number {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Center the index number */
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 5px;
+
+    width: 60px; /* Set the same width and height */
+    height: 60px; /* Set the same width and height */
+    border-radius: 50%;
+
+    font-family: "Roboto", sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+    text-align: center;
+    color: black;
 }
-
-
-
-        /* Define CSS styles for the images */
-        .principles-container {
-            display: flex;
-            flex-wrap: wrap; /* Allow pictures to wrap to the next line */
-            gap: 5px; /* Adjust the gap between images */
-            justify-content: flex-start;
-            margin-top: 10px;
-            margin-left: 20px;
-        }
-
-        .principles-row {
-            display: flex;
-            gap: 5px; /* Adjust the gap between images */
-            align-items: flex-start;
-        }
-
-        .principle {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .principle img {
-            width: auto ; /* Adjust the width of the images */
-            height: 100px; /* Automatically adjust height while maintaining aspect ratio */
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .principle:hover img {
-            transform: scale(1.5); /* Scale up the image on hover */
-        }
-
-        .tooltip {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 5px 5px; /* Increase horizontal padding for width and vertical padding for height */
-            border: none;
-<!--            border: 1px solid #ccc;-->
-            border: none;
-            border-radius: 5px;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            width: 150px; /* Adjust the width */
-            max-height: 150px; /* Limit the maximum height */
-            overflow-y: auto; /* Enable vertical scrollbar if content exceeds max-height */
-
-            font-size: 15px; /* Adjust the font size */
-            color: rgb(0, 0, 0); /* Adjust the color */
-            font-family: "Roboto",  sans-serif; /* Change the font type */
-        }
-
-        .principle:hover .tooltip {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .row-title {
-
-            margin-bottom: 10px; /* Adjust the space between rows */
-            margin-left: 0px;
-
-            color: rgb(0, 0, 0); /* Adjust the color */
-            font-family: "Roboto",  sans-serif; /* Change the font type */
-            font-style: italic;
-            font-weight: 500;
-            font-size: 18px; /* Adjust the font size */
-
-        }
-        .row-title::first-letter {
-            /* Capitalize the first letter */
-            text-transform: uppercase;
-        }
-
-
-        .main-heading {
-            text-align: center;
-
-            font-family: "Roboto", sans-serif;
-            font-weight: 150;
-            font-style: normal; /* or italic */
-            font-size: 60px;
-            color: black;
-
-            margin-top: 10px;
-            margin-bottom: 10px; /* Adjust the margin bottom as needed */
-        }
-
-        .dropdown-container {
-            display: flex; /* Use flexbox to align items */
-            align-items: center; /* Center items vertically */
-            justify-content: center;
-            margin-bottom: 10px; /* Add margin below the container */
-        }
-
-        .dropdown-label {
-            margin-right: 5px; /* Add space between label and dropdown */
-
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 20px;
-            color: black;
-        }
-
-        .dropdown-menu {
-            border: 1px solid #000; /* Add a border */
-            border-radius: 25px; /* Add rounded corners */
-            width: auto; /* Set the width of the dropdown box */
-            margin-right: 2px;
-
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-            font-size: 18px;
-            color: crimson;
-        }
-
-
+.principle:hover .index-number {
+    opacity: 0; /* Make the index number disappear on hover */
+}
 
     </style>
 </head>
 
+
+
+
 <body>
-    <h1 class="main-heading">Design Principles</h1>
+    <h1 class="main-heading">Design Principles for Demand-Responsive Station Areas</h1>
 
     <!-- Container for the label and dropdown -->
     <div class="dropdown-container">
         <!-- Text label for the dropdown menu -->
-        <span class="dropdown-label">Perspective:</span>
+        <span class="dropdown-label">Perspective ➭</span>
 
         <!-- Dropdown menu for selecting dimensions -->
         <select id="dimensionSelect" class="dropdown-menu">
             <option value="">All</option>
             {% for col in data.columns %}
-                {% if col not in ['index', 'picture_location', 'design_principle_name'] %}
+                {% if col not in ['real index', 'index', 'picture_location', 'design_principle_name', 'detail_pictures_folder'] %}
                     <option value="{{ col }}" {% if selected_dimension == col %}selected{% endif %}>{{ col }}</option>
                 {% endif %}
             {% endfor %}
         </select>
     </div>
 
+
+    <!-- Container for design principles -->
     <div class="principles-container" id="principles-container">
         {% if selected_dimension %}
-            {% for group in groups %}
-                <div class="row-container">
-                    <div class="row-title">{{ data[selected_dimension].iloc[group[0]] }}</div>
-                    <div class="principles-row">
-                        {% for index in group %}
-                            {% set row = data.iloc[index] %}
-                            <div class="principle" id="principle{{ index }}" draggable="true" ondragstart="drag(event)">
-                                <a href="{{ url_for('detail_2', index=index) }}" target="_blank">
-                                    <img src="{{ url_for('static', filename=row['picture_location']) }}" alt="Picture">
-                                    <div class="tooltip">
-                                        <p>{{ row['design_principle_name'] }}</p>
-                                        <p>{{ row['research_methodology'] }}</p>
-                                        <!-- Add more relevant information here -->
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
+                {% for group in groups %}
+                    <div class="row-container">
+                        <div class="row-title">{{ data[selected_dimension].iloc[group[0]] }}</div>
+                        <div class="principles-row">
+                            {% for index in group %}
+                                {% set row = data.iloc[index] %}
+                                <div class="principle" id="principle{{ index }}" draggable="true" ondragstart="drag(event)">
+                                    <a href="{{ url_for('detail_2', index=index) }}" target="_blank">
+                                        <span class="index-number">{{ row['index'] }}</span>
+                                        <img src="{{ url_for('static', filename=row['picture_location']) }}" alt="Picture">
+                                        <div class="tooltip">
+                                            <p>{{ row['design_principle_name'] }}</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+
         {% else %}
             {% for index, row in data.iterrows() %}
                 <div class="principle" id="principle{{ index }}" draggable="true" ondragstart="drag(event)">
                     <a href="{{ url_for('detail_2', index=index) }}" target="_blank">
+                        <span class="index-number">{{ row['index'] }}</span>
                         <img src="{{ url_for('static', filename=row['picture_location']) }}" alt="Picture">
                         <div class="tooltip">
                             <p>{{ row['design_principle_name'] }}</p>
-                            <p>{{ row['research_methodology'] }}</p>
-                            <!-- Add more relevant information here -->
                         </div>
                     </a>
                 </div>
@@ -217,47 +233,129 @@
     </div>
 
 
-    <script>
-        function allowDrop(ev) {
-            ev.preventDefault();
-        }
 
-        function drag(ev) {
-            ev.dataTransfer.setData("text", ev.target.id);
-        }
 
-        function drop(ev) {
-            ev.preventDefault();
-            var data = ev.dataTransfer.getData("text");
-            ev.target.appendChild(document.getElementById(data));
-            var newOrder = [];
-            var principles = document.getElementsByClassName("principle");
-            for (var i = 0; i < principles.length; i++) {
-                var id = principles[i].id.replace("principle", "");
-                newOrder.push(parseInt(id));
-            }
-            // Send the new order to the server
-            fetch('/rearrange', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ newOrder: newOrder })
-            }).then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-        }
+<script>
+    document.getElementById('dimensionSelect').addEventListener('change', function() {
+        var dimension = this.value;
+        if (dimension === '(Other) Themes') {
+            // Store the selected dimension in session storage
+            sessionStorage.setItem('selectedDimension', dimension);
 
-        // Add event listener to handle dropdown selection
-        document.getElementById('dimensionSelect').addEventListener('change', function() {
-            var dimension = this.value;
+            // Call a function to fetch available themes and filter design principles
+            fetchThemesAndFilter();
+        } else if (dimension === 'All') {
+            // Clear the session storage for selected dimension
+            sessionStorage.removeItem('selectedDimension');
+
             // Update the URL to reflect the selected dimension
-            window.location.href = '/?dimension=' + dimension;
-        });
+            window.location.href = '/?dimension=' + 'All';
+        } else {
+            // Update the URL to reflect the selected dimension
+            window.location.href = '/?dimension=' + (dimension ? dimension : 'All');
+        }
+    });
+
+    // Function to fetch available themes and filter design principles
+    function fetchThemesAndFilter() {
+        // Fetch available themes from the server
+        fetch('/get_available_themes')
+        .then(response => response.json())
+        .then(themes => {
+            // Display the themes and let the user select
+            var themeList = themes.map(theme => '<div class="row-title">' + theme + '</div>').join('');
+
+            // Filter design principles based on the selected theme
+            themes.forEach(theme => filterByTheme(theme));
+
+            // Call the sorting function after fetching and filtering
+            sortContainers();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Function to filter design principles by theme
+    function filterByTheme(theme) {
+        // Clear the existing content before appending new content
+        document.getElementById('principles-container').innerHTML = '';
+
+        // Send the selected theme to the server for filtering
+        fetch('/filter_by_theme', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ theme: theme })
+        })
+        .then(response => response.text())
+        .then(html => {
+            // Append the filtered design principles to the principles container
+            document.getElementById('principles-container').innerHTML += html;
+        })
+        .catch(error => console.error('Error:', error));
+    }
 
 
 
 
-    </script>
+// Function to sort containers based on the row titles
+function sortContainers() {
+    // Get all the container elements
+    var containers = document.querySelectorAll('.row-container');
+
+    // Check if containers exist
+    if (containers.length === 0) {
+        // If no containers exist, exit the function
+        return;
+    }
+
+    // Convert NodeList to Array for sorting
+    containers = Array.from(containers);
+
+    // Sort the containers based on the row titles, if they exist
+    containers.sort(function(a, b) {
+        var titleA = a.querySelector('.row-title');
+        var titleB = b.querySelector('.row-title');
+
+        // Check if both containers have row titles
+        if (titleA && titleB) {
+            var titleTextA = titleA.innerText.toUpperCase();
+            var titleTextB = titleB.innerText.toUpperCase();
+
+            if (titleTextA < titleTextB) {
+                return -1;
+            }
+            if (titleTextA > titleTextB) {
+                return 1;
+            }
+            return 0;
+        } else {
+            // If either container lacks a row title, maintain the current order
+            return 0;
+        }
+    });
+
+    // Empty the principles container
+    var principlesContainer = document.getElementById('principles-container');
+    principlesContainer.innerHTML = '';
+
+    // Append sorted row containers back to the principles container
+    containers.forEach(function(container) {
+        principlesContainer.appendChild(container);
+    });
+}
+
+
+    // Call the sorting function after the page is fully loaded
+    window.onload = function() {
+
+        sortContainers();
+    };
+
+</script>
+
+
 </body>
+
+
 </html>

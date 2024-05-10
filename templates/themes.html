@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Principles</title>
+    <style>
+
+.principles-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow pictures to wrap to the next line */
+<!--    gap: 5px; /* Adjust the gap between images */-->
+    justify-content: flex-start;
+    margin-top: 10px;
+<!--    margin-left: 10px;-->
+<!--    border: 1px solid rgba(0,0,0,1);-->
+}
+
+.principles-row {
+    display: flex;
+    flex-wrap: wrap; /* Allow images to wrap to the next line */
+    align-items: flex-start;
+}
+
+.principle {
+    display: flex;
+    flex-wrap: wrap; /* Allow pictures to wrap to the next line */
+    justify-content: flex-start;
+    margin: 10px; /* Adjust the gap between images */
+<!--    border: 1px solid rgba(0,0,0,1);-->
+}
+.principle img {
+    width: 210px ; /* Adjust the width of the images */
+    height: 140px; /* Automatically adjust height while maintaining aspect ratio */
+    transition: transform 0.3s ease-in-out;
+<!--    border: 1px solid rgba(0,0,0,0.1);-->
+}
+
+.row-container {
+    display: block; /* Display as block element to ensure each container starts from a new line */
+    flex-direction: column; /* Adjust flex-direction to stack elements vertically */
+    flex-basis: 100%;
+}
+
+.row-title {
+    display: block;
+    flex-basis: 100%; /* Force each title to take up the full width */
+<!--    margin-bottom: 5px; /* Adjust the space between rows */-->
+    margin-top: 0px;
+    margin-left: 0px;
+    color: rgb(0, 0, 0); /* Adjust the color */
+    font-family: "Roboto",  sans-serif; /* Change the font type */
+    font-style: normal;
+    font-weight: 1000;
+    font-size: 25px; /* Adjust the font size */
+}
+.row-title::first-letter {
+    /* Capitalize the first letter */
+    text-transform: uppercase;
+}
+
+    </style>
+</head>
+
+<body>
+
+<!-- Container for filtered design principles -->
+
+
+    <div class="row-container">
+        <div class="row-title">{{ theme }}</div>
+        <div class="principles-row">
+                {% for index, row in data.iterrows() %}
+                    <div class="principle" id="principle{{ index }}" draggable="true" ondragstart="drag(event)">
+                        <a href="{{ url_for('detail_2', index=index) }}" target="_blank">
+                            <span class="index-number">{{ row['index'] }}</span>
+                            <img src="{{ url_for('static', filename=row['picture_location']) }}" alt="Principle Image">
+                            <div class="tooltip">
+                                <p>{{ row['design_principle_name'] }}</p>
+                                <!-- Add more relevant information here -->
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+        </div>
+    </div>
+
+
+
+</body>
+</html>
